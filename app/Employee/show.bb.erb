@@ -1,0 +1,45 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @employee.name %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @employee.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Name</td>
+        <td class="itemValue"><%= @employee.name%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Company</td>
+        <td class="itemValue"><%= @employee.company%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Address</td>
+        <td class="itemValue"><%= @employee.address%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Age</td>
+        <td class="itemValue"><%= @employee.age%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Gender</td>
+        <td class="itemValue"><%= @employee.gender%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Salary</td>
+        <td class="itemValue"><%= @employee.salary%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

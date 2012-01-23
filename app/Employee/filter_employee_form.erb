@@ -1,0 +1,38 @@
+<div data-role="page">
+  <div class="pageTitle">
+    <h1>Filter Page</h1>
+  </div>
+  <div class="toolbar">
+    <div class="leftItem backButton">
+      <a class="cancel" href="<%= url_for :action => :index %>">Cancel</a>
+    </div>
+  </div>
+  <div class="content">
+    <form method="POST" action="<%= url_for :controller => :Employee, :action => :filter_employee_result %>">
+      <h4 class="groupTitle">Gender</h4>
+      <ul>
+        <li>
+          <label for="gender">Male</label>
+          <input type="radio" name="gender" value="Male"/>
+        </li>
+        <li>
+          <label for="gender">Female</label>
+          <input type="radio" name="gender" value="Female"/>
+        </li>
+      </ul>
+      <h4 class="groupTitle">Company</h4>
+      <ul>
+        <li>
+          <select name="company_id">
+            <% @companies.each do |company|%>
+              <option value="<%= company.object%>"> <%=company.name %> </option>
+            <%end%>
+          </select>
+        </li>
+      </ul>
+      <input type="submit" class="standardButton" value="Filter"/>
+    </form>
+  </div>
+
+
+</div>
